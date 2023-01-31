@@ -1,0 +1,12 @@
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\bin\Release\net6.0\FirstCoreProject.CommonHelper.deps.json
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\bin\Release\net6.0\FirstCoreProject.CommonHelper.dll
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\bin\Release\net6.0\FirstCoreProject.CommonHelper.pdb
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\FirstCoreProject.CommonHelper.csproj.AssemblyReference.cache
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\FirstCoreProject.CommonHelper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\FirstCoreProject.CommonHelper.AssemblyInfoInputs.cache
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\FirstCoreProject.CommonHelper.AssemblyInfo.cs
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\FirstCoreProject.CommonHelper.csproj.CoreCompileInputs.cache
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\FirstCoreProject.CommonHelper.dll
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\refint\FirstCoreProject.CommonHelper.dll
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\FirstCoreProject.CommonHelper.pdb
+D:\Training\.Net Core 6\FirstCoreProject.CommonHelper\obj\Release\net6.0\ref\FirstCoreProject.CommonHelper.dll
