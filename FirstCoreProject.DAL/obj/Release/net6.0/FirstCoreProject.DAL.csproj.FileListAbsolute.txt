@@ -1,0 +1,17 @@
+D:\Training\.Net Core 6\FirstCoreProject.DAL\bin\Release\net6.0\FirstCoreProject.DAL.deps.json
+D:\Training\.Net Core 6\FirstCoreProject.DAL\bin\Release\net6.0\FirstCoreProject.DAL.dll
+D:\Training\.Net Core 6\FirstCoreProject.DAL\bin\Release\net6.0\FirstCoreProject.DAL.pdb
+D:\Training\.Net Core 6\FirstCoreProject.DAL\bin\Release\net6.0\FirstCoreProject.CommonHelper.dll
+D:\Training\.Net Core 6\FirstCoreProject.DAL\bin\Release\net6.0\FirstCoreProject.Models.dll
+D:\Training\.Net Core 6\FirstCoreProject.DAL\bin\Release\net6.0\FirstCoreProject.CommonHelper.pdb
+D:\Training\.Net Core 6\FirstCoreProject.DAL\bin\Release\net6.0\FirstCoreProject.Models.pdb
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\FirstCoreProject.DAL.csproj.AssemblyReference.cache
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\FirstCoreProject.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\FirstCoreProject.DAL.AssemblyInfoInputs.cache
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\FirstCoreProject.DAL.AssemblyInfo.cs
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\FirstCoreProject.DAL.csproj.CoreCompileInputs.cache
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\FirstCoreProject.DAL.csproj.CopyComplete
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\FirstCoreProject.DAL.dll
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\refint\FirstCoreProject.DAL.dll
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\FirstCoreProject.DAL.pdb
+D:\Training\.Net Core 6\FirstCoreProject.DAL\obj\Release\net6.0\ref\FirstCoreProject.DAL.dll
