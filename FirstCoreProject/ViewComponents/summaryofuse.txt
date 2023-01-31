@@ -1,0 +1,9 @@
+﻿
+partial view page model ko context nahi krte h
+
+
+viewcomponent page model/programing context ko hold or get kr skte h backend ke context ko
+
+
+
+logout hone ke baad login krega to fir count dikha dega

@@ -1,0 +1,51 @@
+﻿
+
+
+
+<div class="container p-1">
+    <div class="row">
+        <div class="col-8">
+            <h1>List of Order</h1>
+        </div>
+        <div class="col-4">
+
+            <a asp-controller="Order" asp-action="Index" class="btn btn-primary btn-md" asp-route-status="all">All</a>
+
+            <a asp-controller="Order" asp-action="Index" class="btn btn-danger btn-md" asp-route-status="pending">Pending</a>
+            <a asp-controller="Order" asp-action="Index" class="btn btn-success btn-md" asp-route-status="approved">Approved</a>
+
+            <a asp-controller="Order" asp-action="Index" class="btn btn-warning btn-md" asp-route-status="underprocess">Under Process</a>
+
+            <a asp-controller="Order" asp-action="Index" class="btn btn-info btn-md" asp-route-status="shipped">Shipped</a>
+      
+
+
+         </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+<table id="myTable" class="table table-bordered table-striped table-hover " style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Date</th>
+             <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+</table>
+
+
+
+@section scripts{
+    <script src="~/js/Order.js"></script>
+}

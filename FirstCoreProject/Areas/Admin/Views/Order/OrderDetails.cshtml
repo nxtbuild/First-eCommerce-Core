@@ -1,0 +1,266 @@
+﻿@model FirstCoreProject.Models.ViewModels.OrderViewModel
+@using FirstCoreProject.CommonHelper
+<form method="post">
+
+    <input type="hidden" asp-for="OrderHeader.Id" />
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Order Summary-@Model.OrderHeader.OrderStatus</span>
+                </h4>
+                <ul class="list-group mb-3 sticky-top">
+
+                    @foreach (var item in Model.OrderDetails)
+                    {
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">@item.Product.Name</h6>
+                                <small class="text-muted"><i class="fa-solid fa-indian-rupee-sign"></i> @item.Product.Price x @item.Count</small>
+                            </div>
+                            <span class="text-muted"><i class="fa-solid fa-indian-rupee-sign"></i> @((item.Product.Price) * (item.Count))</span>
+                        </li>
+                    }
+
+
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total </span>
+                        <strong><i class="fa-solid fa-indian-rupee-sign"></i> @Model.OrderHeader.OrderTotal</strong>
+                    </li>
+                </ul>
+                <hr class="mb-4">
+
+                @if (User.IsInRole(WebRole.Role_Admin) || User.IsInRole(WebRole.Role_Employee))
+                {
+                    if (Model.OrderHeader.OrderStatus == OrderStatus.StatusApproved)
+                    {
+                        <button asp-action="InProcess" type="submit" class="btn btn-primary btn-lg btn-block">Processing</button>
+
+                    }
+
+                    <br />
+                    if (Model.OrderHeader.OrderStatus == OrderStatus.StatusInProcess)
+                    {
+                        <button asp-action="Shipped" type="submit" onclick="return ValidateEmpty()" class="btn btn-success btn-lg btn-block">ShipOrder</button>
+
+                    }
+
+                    <br />
+                    if (Model.OrderHeader.OrderStatus != OrderStatus.StatusRefund && Model.OrderHeader.OrderStatus != OrderStatus.StatusCancelled)
+                    {
+                        <button asp-action="CancelOrder" type="submit" class="btn btn-danger btn-lg btn-block">Cancel Order</button>
+
+                    }
+                    else
+                    {
+                        @if (User.IsInRole(WebRole.Role_User) && Model.OrderHeader.OrderStatus==OrderStatus.StatusPending)
+                        {
+                             <button asp-action="PayNow" type="submit" class="btn btn-success btn-lg btn-block">Pay Now</button>
+
+                        }
+                    }
+
+
+                    <br />
+                }
+
+
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Pickup Details</h4>
+                <div class="row">
+                    @if (User.IsInRole(WebRole.Role_Admin) || User.IsInRole(WebRole.Role_Employee))
+                    {
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="OrderHeader.Name">Name</label>
+                            <input type="text" class="form-control" placeholder="" asp-for="OrderHeader.Name">
+                            <span asp-validation-for="OrderHeader.Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="OrderHeader.Phone">Phone</label>
+                            <input type="text" class="form-control" placeholder="" asp-for="OrderHeader.Phone">
+                            <span asp-validation-for="OrderHeader.Phone" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="OrderHeader.ApplicationUser.Email">Email</label>
+                            <input readonly class="form-control" placeholder="" asp-for="OrderHeader.ApplicationUser.Email">
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="OrderHeader.Address">Address</label>
+                            <textarea type="text" class="form-control" placeholder="" asp-for="OrderHeader.Address"></textarea>
+                            <span asp-validation-for="OrderHeader.Address" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="OrderHeader.State">State</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.State" />
+                            <span asp-validation-for="OrderHeader.State" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="OrderHeader.City">City</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.City" />
+                            <span asp-validation-for="OrderHeader.City" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.PostalCode">PostalCode</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.PostalCode">
+                            <span asp-validation-for="OrderHeader.PostalCode" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.DateOfOrder">Order Date</label>
+                            <input type="text" class="form-control" value="@Model.OrderHeader.DateOfOrder.ToShortDateString()">
+                        </div>
+
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.Carrier">Carrier</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.Carrier">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.TrackingNumber">Tracking No</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.TrackingNumber">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.DateOfShipping">Shipping Date</label>
+                            <input readonly class="form-control" value="@Model.OrderHeader.DateOfShipping.ToShortDateString()">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.SessionId">Session Id</label>
+                            <input readonly class="form-control" asp-for="OrderHeader.SessionId">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.PaymentIntentId">Payment Intent Id</label>
+                            <input readonly class="form-control" asp-for="OrderHeader.PaymentIntentId">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.DateOfPayment">Payment Date</label>
+                            <input type="text" class="form-control" value="@Model.OrderHeader.DateOfPayment.ToShortDateString()">
+                        </div>
+
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.PaymentStatus">Payment Status</label>
+                            <input type="text" class="form-control" asp-for="OrderHeader.PaymentStatus">
+                        </div>
+
+                    }
+                    else
+                    {
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Name</label>
+                            <input readonly class="form-control" asp-for="OrderHeader.Name">
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="OrderHeader.Phone">Phone</label>
+                            <input readonly class="form-control" placeholder="" asp-for="OrderHeader.Phone">
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="OrderHeader.ApplicationUser.Email">Email</label>
+                            <input readonly class="form-control" placeholder="" asp-for="OrderHeader.ApplicationUser.Email">
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="OrderHeader.Address">Address</label>
+                            <textarea type="text" readonly class="form-control" placeholder="" asp-for="OrderHeader.Address"></textarea>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="state">State</label>
+                            <input type="text" readonly class="form-control" asp-for="OrderHeader.State" />
+
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="city">City</label>
+                            <input type="text" readonly class="form-control" asp-for="OrderHeader.City" />
+
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="zip">PostalCode</label>
+                            <input type="text" readonly class="form-control" asp-for="OrderHeader.PostalCode">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.DateOfOrder">Order Date</label>
+                            <input readonly class="form-control" value="@Model.OrderHeader.DateOfOrder.ToShortDateString()">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.Carrier">Carrier</label>
+                            <input readonly class="form-control" asp-for="OrderHeader.Carrier">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.TrackingNumber">Tracking No</label>
+                            <input readonly class="form-control" asp-for="OrderHeader.TrackingNumber">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="OrderHeader.DateOfShipping">Shipping Date</label>
+                            <input readonly class="form-control" value="@Model.OrderHeader.DateOfShipping.ToShortDateString()">
+                        </div>
+
+                    }
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    <script>
+        function ValidateEmpty() {
+            if (document.getElementById("OrderHeader_TrackingNumber").value == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please enter tracking number.',
+                });
+
+                return false;
+            }
+
+            if (document.getElementById("OrderHeader_Carrier").value == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please enter carrier.',
+                });
+
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+}
