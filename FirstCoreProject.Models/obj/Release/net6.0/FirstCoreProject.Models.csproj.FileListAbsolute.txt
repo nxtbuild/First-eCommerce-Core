@@ -1,0 +1,12 @@
+D:\Training\.Net Core 6\FirstCoreProject.Models\bin\Release\net6.0\FirstCoreProject.Models.deps.json
+D:\Training\.Net Core 6\FirstCoreProject.Models\bin\Release\net6.0\FirstCoreProject.Models.dll
+D:\Training\.Net Core 6\FirstCoreProject.Models\bin\Release\net6.0\FirstCoreProject.Models.pdb
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\FirstCoreProject.Models.csproj.AssemblyReference.cache
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\FirstCoreProject.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\FirstCoreProject.Models.AssemblyInfoInputs.cache
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\FirstCoreProject.Models.AssemblyInfo.cs
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\FirstCoreProject.Models.csproj.CoreCompileInputs.cache
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\FirstCoreProject.Models.dll
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\refint\FirstCoreProject.Models.dll
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\FirstCoreProject.Models.pdb
+D:\Training\.Net Core 6\FirstCoreProject.Models\obj\Release\net6.0\ref\FirstCoreProject.Models.dll
